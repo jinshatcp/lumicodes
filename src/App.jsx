@@ -32,7 +32,7 @@ function App() {
         <Contact />
 
         <footer className="py-8 text-center text-gray-600 text-sm border-t border-purple-900/20 bg-black/40">
-          <p>&copy; {new Date().getFullYear()} Lumi Codes. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Lumi Codes. All rights reserved. Designed by Azone Projects</p>
         </footer>
       </div>
     </LanguageProvider>
