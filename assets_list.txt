@@ -1,0 +1,30 @@
+﻿
+Name                                       
+----                                       
+about_bg-qWO2RYIr.png                      
+aiml-BpOTlE0p.png                          
+booking-DB79zh__.png                       
+branding-BK_J63pd.png                      
+corporates-Cp0GY-wU.jpg                    
+custom software development-CUCjiRuu.png   
+digitalmarketing-wfYQN7Tq.jfif             
+education-DGQONGAH.png                     
+erM-Bn-tzsNV.jpg                           
+erp-BmkbkHNi.jfif                          
+health-CnjvV9Ui.png                        
+hero_bg-D6WaGr5W.png                       
+hrms-CoU1s97b.png                          
+index-axeZ1bCT.css                         
+index-DOLMXdbh.js                          
+industries_bg-C0RSgv5e.png                 
+invoice-NLecjiki.png                       
+logistic-DPOoVIP_.png                      
+logo-DOnzxKCE.png                          
+logo-nnzSciBB.png                          
+mobile app-8qeBQ8uJ.png                    
+pos-DvJAc02d.png                           
+Real Estate-fqPvkKwG.png                   
+Retail _ E-Commerce-RbHsOPCD.jpg           
+website-design-and-development-T3L_hCv0.png
+
+

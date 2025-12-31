@@ -4,7 +4,7 @@ import aiMlImg from '../assets/images/aiml.png';
 import webDevImg from '../assets/images/website-design-and-development.png';
 import customSoftImg from '../assets/images/custom software development.png';
 import digitalMktImg from '../assets/images/digitalmarketing.jfif';
-import brandingImg from '../assets/images/branding.jpg';
+import brandingImg from '../assets/images/branding.png';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 

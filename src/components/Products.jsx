@@ -1,5 +1,5 @@
 import React from 'react';
-import posImg from '../assets/images/pos.jfif';
+import posImg from '../assets/images/pos.png';
 import hrmsImg from '../assets/images/hrms.png';
 import inventoryImg from '../assets/images/Inventory.jfif';
 import erpImg from '../assets/images/erp.jfif';
