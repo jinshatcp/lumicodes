@@ -1,5 +1,5 @@
 import React from 'react';
-import mobileAppImg from '../assets/images/mobile app.jpeg';
+import mobileAppImg from '../assets/images/mobile app.png';
 import aiMlImg from '../assets/images/aiml.png';
 import webDevImg from '../assets/images/website-design-and-development.png';
 import customSoftImg from '../assets/images/custom software development.png';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import industriesBg from '../assets/images/industries_bg.png';
-import retailImg from '../assets/images/Retail & E-Commerce.jpg';
+import retailImg from '../assets/images/Retail _ E-Commerce.png';
 import realEstateImg from '../assets/images/Real Estate.png';
 import healthImg from '../assets/images/health.png';
 import educationImg from '../assets/images/education.png';
