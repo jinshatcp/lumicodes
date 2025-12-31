@@ -15,26 +15,47 @@ const Hero = () => {
     ? t.heroTitle.split('&') 
     : ['Smart Software ', ' Digital Solutions'];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 1, ease: "easeOut" }
+    }
+  };
+
   return (
     <section id="home" className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-[#050208]">
       {/* Background Layer */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black/80 via-purple-900/40 to-black/80 z-10" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black/90 via-purple-900/30 to-black/90 z-10" />
         <motion.img
           src={heroBg}
           alt="Digital Solutions Background"
           className="w-full h-full object-cover opacity-60"
-          initial={{ scale: 1.1, opacity: 0 }}
+          initial={{ scale: 1.2, opacity: 0 }}
           animate={{ 
-            scale: [1.1, 1.2, 1.1],
-            opacity: 0.6,
-            y: [0, -20, 0]
+            scale: [1.2, 1.3, 1.2],
+            opacity: 0.4,
+            y: [0, -30, 0],
+            x: [0, 10, 0]
           }}
           transition={{ 
-            duration: 20, 
+            duration: 25, 
             repeat: Infinity,
-            ease: "easeInOut",
-            opacity: { duration: 2 }
+            ease: "linear",
+            opacity: { duration: 3 }
           }}
         />
       </div>
@@ -43,34 +64,39 @@ const Hero = () => {
       <div className="container-custom relative z-20 pt-20">
         <div className="flex flex-col items-center justify-center text-center">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-tight text-white drop-shadow-2xl">
+            <h1 className="text-5xl md:text-7xl lg:text-9xl font-extrabold mb-8 tracking-tighter leading-none text-white drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
               {language === 'ar' ? (
                 <motion.span
-                  initial={{ opacity: 0, filter: 'blur(10px)' }}
-                  animate={{ opacity: 1, filter: 'blur(0px)' }}
-                  transition={{ duration: 1 }}
+                  variants={itemVariants}
+                  className="block"
                 >
                   {t.heroTitle}
                 </motion.span>
               ) : (
                 <>
-                  <span className="block mb-2">{titleParts[0]} &</span>
                   <motion.span 
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-[length:200%_auto] inline-block"
+                    variants={itemVariants}
+                    className="block mb-4 text-white/90"
+                    style={{ textShadow: '0 0 20px rgba(168, 85, 247, 0.4)' }}
+                  >
+                    {titleParts[0]} &
+                  </motion.span>
+                  
+                  <motion.span 
+                    variants={itemVariants}
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-300 to-purple-500 bg-[length:200%_auto] inline-block font-black pb-4"
                     animate={{ 
                       backgroundPosition: ["0% center", "200% center"],
-                      scale: [1, 1.05, 1],
-                      rotate: [0, 1, 0, -1, 0]
+                      filter: ["drop-shadow(0 0 10px rgba(168, 85, 247, 0.3))", "drop-shadow(0 0 20px rgba(168, 85, 247, 0.6))", "drop-shadow(0 0 10px rgba(168, 85, 247, 0.3))"]
                     }}
                     transition={{ 
-                      backgroundPosition: { duration: 4, repeat: Infinity, ease: "linear" },
-                      scale: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-                      rotate: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+                      backgroundPosition: { duration: 5, repeat: Infinity, ease: "linear" },
+                      filter: { duration: 3, repeat: Infinity, ease: "easeInOut" }
                     }}
                   >
                     {titleParts[1] || 'Digital Solutions'}
@@ -80,24 +106,21 @@ const Hero = () => {
             </h1>
 
             <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md"
+              variants={itemVariants}
+              className="text-xl md:text-3xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed tracking-wide"
             >
               {t.heroSubtitle}
             </motion.p>
 
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-6"
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row items-center justify-center gap-8"
             >
-              <a href="#contact" className="btn-primary transform hover:scale-105 transition-all text-lg px-10 py-4 shadow-purple-500/50 shadow-lg">
-                {t.getStarted}
+              <a href="#contact" className="group relative px-12 py-5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-xl font-bold transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.5)]">
+                <span className="relative z-10">{t.getStarted}</span>
+                <div className="absolute inset-0 rounded-full bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
-              <a href="#services" className="px-10 py-4 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all text-lg font-medium">
+              <a href="#services" className="px-12 py-5 rounded-full border-2 border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-md transition-all text-xl font-semibold hover:border-purple-500/50">
                 {t.exploreServices}
               </a>
             </motion.div>
@@ -105,7 +128,11 @@ const Hero = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#050208] to-transparent z-10" />
+      {/* Decorative Blur Orbs */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] z-0 animate-pulse" />
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan-600/20 rounded-full blur-[120px] z-0 animate-pulse" style={{ animationDelay: '2s' }} />
+      
+      <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-[#050208] via-[#050208]/80 to-transparent z-10" />
     </section>
   );
 };
